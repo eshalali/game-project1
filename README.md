@@ -1,1 +1,20 @@
 # game-project1
+- Game will open to home screen with welcome message and wheel of categories
+- Message saying 'Player 1's turn' will show on page
+- Player will click on the wheel for it to spin and stop on any category
+- 'Card' with category name will come up on screen over wheel
+- After a few seconds, a question will show up with four answer choices
+    - Questions come from trivia API
+- User has 15 seconds to answer question
+- User answers by clicking on answer choice
+- If correct, 'Correct' replaces question and all other answer choices go away
+    - Maybe confetti on screen, maybe dinging
+- If incorrect, 'Incorrect' replaces question and all other choies go away
+    - Maybe X's on screen, maybe wrong buzzer sound
+- Card can either disappear or user can X out of it to go back to wheel
+    - This time, there is a scoreboard in the corner with score of each player and the screen says 'Player 2's turn'
+    - 'Click to spin wheel will still be there, no 'Welcome' anymore
+- Each question can be worth 15 or 20 points
+    - Goal is to get 100 pts first/have more points at end of nth round
+    - Questions get harder as game goes on?
+    - Each player gets one bonus or daily double type question
