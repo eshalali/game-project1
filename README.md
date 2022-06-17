@@ -31,6 +31,3 @@ Day 4: Create navigation back to home screen, now with score board, create wildc
 Day 5: Styling 
 Day 6: Troubleshooting/polishing
 
-<img src="sei/proj1wireframes/0001.jpg">
-<img src="sei/proj1wireframes/0002.jpg">
-<img src="sei/proj1wireframes/0003.jpg">
