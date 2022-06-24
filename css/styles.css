@@ -70,3 +70,9 @@ button {
   img {
       margin: auto;
   }
+
+  #answer1, #answer2, #answer3, #answer4 {
+      border: 1px solid rgb(213, 116, 11);
+      background-color: bisque;
+      height: 40px;
+  }
