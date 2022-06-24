@@ -8,13 +8,14 @@ body{
     background-color: rgb(120, 195, 239);
     /* background: linear-gradient(90deg, rgb(136, 136, 232) 0%, rgb(92, 86, 218) 52%, rgb(111, 111, 201) 100%); */
     background-size: cover;
+    margin: 20% auto;
 }
 button {
     display: block;
     margin: 0 auto;
 }
 
-.modal {
+.question-card {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -25,10 +26,11 @@ button {
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    text-align: center;
   }
   
   /* Modal Content/Box */
-  .modal-content {
+  .card-content {
     background-color: #fefefe;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
@@ -53,4 +55,18 @@ button {
 
   span {
       display: block;
+  }
+
+  .scoreboard {
+    background-color: #fefefe;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 10px;
+    border: 1px solid rgb(209, 129, 32);
+    width: 200px; /* Could be more or less, depending on screen size */
+  }
+
+  img {
+      margin: auto;
   }
