@@ -76,3 +76,7 @@ button {
       background-color: bisque;
       height: 40px;
   }
+
+  #timer {
+      float: left;
+  }
