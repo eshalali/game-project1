@@ -12,6 +12,7 @@ const timer = document.getElementById('timer')
 const question = document.getElementById('question')
 const player1 = document.getElementById('player1')
 const player2 = document.getElementById('player2')
+const showturn = document.getElementById('show-turn')
 
 let player1Score = 0
 let player2Score = 0
@@ -92,6 +93,9 @@ const onGetSearchSuccess = (searchResult) => {
     gamefunction()
 }
 
+let questionTimer = ''
+
+
 button.addEventListener('click', function() {
     chosenCategory = questionCategories[Math.floor(Math.random() * 4)]
     card.style.display = "block"
@@ -121,7 +125,26 @@ button.addEventListener('click', function() {
             .then(onGetSearchSuccess)
             .catch(onGetSearchFailure)
     }
+    let time = 20
+    const timers = () => {
+    time--
+    if (time >= 10) {
+        timer.innerText = `00:${time}`
+    } else if (time < 10){
+        timer.innerText = `00:0${time}`
+    }    
+    if (time === 0) {
+        questionPic.style.display = 'none'
+        answers.forEach(answer => 
+            answer.style.display = 'none'
+        )
+        question.innerText = "Time's up"
+        clearInterval(questionTimer)
+    }
+}
+questionTimer = setInterval(timers, 1000)
 })
+
 
 span.onclick = function() {
     reset()
@@ -131,5 +154,11 @@ span.onclick = function() {
     }
     player1.innerText = `Player 1 Score: ${player1Score}`
     player2.innerText = `Player 2 Score: ${player2Score}`
+    clearInterval(questionTimer)
+    questionPic.style.display = 'flex'
+        answers.forEach(answer => 
+            answer.style.display = 'flex'
+        )
+        question.innerText = "What is the name of this artwork?"
   }
 
