@@ -23,12 +23,17 @@ let catePhotos = []
 
 let rightAnswer = NaN
 
+if (turn % 2 === 1) {
+    showturn.innerText = "Player 1's turn"
+} else {
+    showturn.innerText = "Player 2's turn"
+}
+
 const onGetSearchFailure = () => {
     console.log('failed')
 }
 
 const rightChoice = () => {
-    console.log('correct')
     answers[rightAnswer].style.backgroundColor = 'lightgreen'
     question.innerText = 'Correct!'
 
@@ -47,8 +52,8 @@ const rightChoice = () => {
     }
 }
 const wrongChoice = (event) => {
-    console.log('wrong')
     event.target.style.backgroundColor = 'red'
+    answers[rightAnswer].style.backgroundColor = 'lightgreen'
     question.innerText = 'Incorrect!'
     turn++
     }
@@ -61,10 +66,8 @@ const gamefunction = () => {
     catePhotos.splice(questionIndex, 1)
     rightAnswer = Math.floor(Math.random() * 3)
     const answers = [answer1, answer2, answer3, answer4]
-    console.log(rightAnswer)
     answers[rightAnswer].innerText = cateTitles[questionIndex]
     cateTitles.splice(questionIndex, 1)
-    console.log(turn)
     answers[rightAnswer].addEventListener('click', rightChoice)
     for (let i = 0; i < answers.length; i++) {
         if (i !== rightAnswer) {
@@ -84,7 +87,6 @@ const reset = () => {
 
 // creating title and picture bank
 const onGetSearchSuccess = (searchResult) => {
-    console.log(searchResult)
     searchResult.data.forEach((result) => {
         cateTitles.push(result.title)
         catePhotos.push(`https://www.artic.edu/iiif/2/${result.image_id}/full/843,/0/default.jpg`)
@@ -99,6 +101,9 @@ let questionTimer = ''
 button.addEventListener('click', function() {
     chosenCategory = questionCategories[Math.floor(Math.random() * 4)]
     card.style.display = "block"
+    answers.forEach(answer => 
+        answer.style.textAlign = 'left'
+    )
     if (chosenCategory === 'Renaissance') {
         fetch("https://api.artic.edu/api/v1/artworks/search?q=renaissance&limit=100&fields=title,image_id")
             .then(res => res.json())
@@ -133,7 +138,8 @@ button.addEventListener('click', function() {
     } else if (time < 10){
         timer.innerText = `00:0${time}`
     }    
-    if (time === 0) {
+    if (time <= 0) {
+        timer.innerText = '00:00'
         questionPic.style.display = 'none'
         answers.forEach(answer => 
             answer.style.display = 'none'
@@ -150,15 +156,19 @@ span.onclick = function() {
     reset()
     card.style.display = "none"
     for (i = 0; i < answers.length; i++) {
-        answers[i].style.backgroundColor = 'bisque'
+        answers[i].style.backgroundColor = 'rgb(249, 238, 224)'
     }
     player1.innerText = `Player 1 Score: ${player1Score}`
     player2.innerText = `Player 2 Score: ${player2Score}`
     clearInterval(questionTimer)
     questionPic.style.display = 'flex'
-        answers.forEach(answer => 
-            answer.style.display = 'flex'
-        )
+    answers.forEach(answer => 
+        answer.style.display = 'flex'
+    )
         question.innerText = "What is the name of this artwork?"
+    if (turn % 2 === 1) {
+        showturn.innerText = "Player 1's turn"
+    } else {
+        showturn.innerText = "Player 2's turn"
+    }
   }
-

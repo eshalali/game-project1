@@ -1,18 +1,38 @@
-h1, h2 {
-    color: rgb(213, 116, 11);
+h1 {
+    color: rgb(233, 216, 195);
     text-align: center;
+    font-size: 75px;
+    margin-top: 300px;
 }
+
+h2 {
+    color: rgb(233, 216, 195);
+    text-align: center;
+    font-size: 45px;
+}
+
+h3 {
+    color: rgb(86, 99, 108);
+    text-align: center;
+    font-size: 30px 
+}
+
 body{
-    font-family: "Open Sans";
+    font-family: 'Shrikhand', cursive;
     overflow: hidden;
-    background-color: rgb(120, 195, 239);
-    /* background: linear-gradient(90deg, rgb(136, 136, 232) 0%, rgb(92, 86, 218) 52%, rgb(111, 111, 201) 100%); */
-    background-size: cover;
+    background-size: cover; 
     margin: 20% auto;
+    background-image: url('/images/image3.jpg');
 }
 button {
     display: block;
     margin: 0 auto;
+    background-color: rgb(233, 216, 195);
+    padding: 10px;
+    font-family:'Shrikhand', cursive;
+    font-size: 20px;
+    color: rgb(108, 121, 131);
+    border: 5px rgb(189, 181, 168) solid
 }
 
 .question-card {
@@ -21,24 +41,29 @@ button {
     z-index: 1; /* Sit on top */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
+    width: 100%; 
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(222, 212, 196); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    /* text-align: center; */
+  }
+
+  .card-content {
+    background-color: rgb(233, 216, 195);
+    margin: 15% auto;
+    padding: 10px;
+    border: 3px solid #888;
+    width: 80%;
     text-align: center;
   }
-  
-  /* Modal Content/Box */
-  .card-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+
+  #question {
+      margin-top: 10px;
+      color:rgb(108, 121, 131);
+      font-size: 50px
   }
-  
-  /* The Close Button */
+
   .close {
     color: #aaa;
     float: right;
@@ -58,25 +83,33 @@ button {
   }
 
   .scoreboard {
-    background-color: #fefefe;
+    background-color: rgb(233, 216, 195);
     position: fixed;
     bottom: 0;
     right: 0;
     margin: 10px;
-    border: 1px solid rgb(209, 129, 32);
-    width: 200px; /* Could be more or less, depending on screen size */
+    border: 5px rgb(189, 181, 168) solid;
+    width: 220px; 
+    font-size: 20px;
+    color: rgb(108, 121, 131)
   }
 
   img {
       margin: auto;
+      height: 500px;
+      width: auto
   }
 
   #answer1, #answer2, #answer3, #answer4 {
-      border: 1px solid rgb(213, 116, 11);
-      background-color: bisque;
-      height: 40px;
+      border: 1px solid rgb(197, 144, 88);
+      background-color: rgb(249, 238, 224);
+      height: 50px;
+      font-size: 20px;
+      color:rgb(119, 138, 173);
+      text-align: left;
   }
 
   #timer {
       float: left;
   }
+
