@@ -36,18 +36,33 @@ const onGetSearchFailure = () => {
 const rightChoice = () => {
     answers[rightAnswer].style.backgroundColor = 'lightgreen'
     question.innerText = 'Correct!'
+    clearInterval(questionTimer)
 
     if (turn % 2 === 1) {
         player1Score += 20
         turn++
         if (player1Score === 100) {
             console.log('Player 1 wins!')
+            card.style.display = 'block'
+            timer.innerText = ''
+            questionPic.style.display = 'none'
+            answers.forEach(answer => 
+            answer.style.display = 'none'
+            )
+            question.innerText = "Player 1 Wins!"
         }
     } else {
         player2Score += 20
         turn++
         if (player2Score === 100) {
-            console.log(['Player 2 wins!'])
+            console.log('Player 2 wins!')
+            card.style.display = 'block'
+            timer.innerText = ''
+            questionPic.style.display = 'none'
+            answers.forEach(answer => 
+            answer.style.display = 'none'
+            )
+            question.innerText = "Player 2 Wins!"
         }
     }
 }
@@ -56,6 +71,7 @@ const wrongChoice = (event) => {
     answers[rightAnswer].style.backgroundColor = 'lightgreen'
     question.innerText = 'Incorrect!'
     turn++
+    clearInterval(questionTimer)
     }
     
 
