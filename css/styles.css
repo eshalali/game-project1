@@ -22,7 +22,7 @@ body{
     overflow: hidden;
     background-size: cover; 
     margin: 20% auto;
-    background-image: url('/images/image3.JPG');
+    background-image: url('../images/image3.JPG');
 }
 button {
     display: block;
