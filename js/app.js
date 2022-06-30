@@ -107,7 +107,6 @@ const onGetSearchSuccess = (searchResult) => {
         cateTitles.push(result.title)
         catePhotos.push(`https://www.artic.edu/iiif/2/${result.image_id}/full/843,/0/default.jpg`)
     })
-    // answers.splice(rightAnswer, 1)
     gamefunction()
 }
 
